@@ -81,10 +81,10 @@ namespace YouTubeBulkUploader
             switch (progress.Status)
             {
                 case UploadStatus.Uploading:
-                    Console.WriteLine("{0} / 1024 KB bereits hochgeladen", progress.BytesSent);
+                    Console.WriteLine("{0} / 1024 KB uploaded", progress.BytesSent);
                     break;
                 case UploadStatus.Failed:
-                    Console.WriteLine("Fehler beim Upload: {progress.Exception}");
+                    Console.WriteLine("Error Uploading: {0}", progress.Exception);
                     break;
                 default:
                     break;
@@ -93,7 +93,7 @@ namespace YouTubeBulkUploader
 
         private void VideosInsertRequest_ResponseReceived(Video video)
         {
-            Console.WriteLine("Upload erfolgreich beendet! Das Video hat die Id: {0}", video.Id);
+            Console.WriteLine("Upload completed successfully! Video id is :{0}", video.Id);
 
         }
 
